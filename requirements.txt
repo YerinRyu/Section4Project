@@ -20,6 +20,7 @@ dnspython==2.1.0
 executing @ file:///home/conda/feedstock_root/build_artifacts/executing_1667317341051/work
 Flask==1.1.2
 fonttools==4.40.0
+gunicorn==20.1.0
 idna==2.10
 importlib-metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1682176699712/work
 importlib-resources==5.12.0
