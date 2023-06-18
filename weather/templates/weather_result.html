@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      
+        .button1 {
+            background: linear-gradient(to right, #5fc3e4, #E6E6FA);
+            box-shadow: #708090;
+            width: 160x;
+            height: 50px;
+            font-size: 1em;
+            font-weight: 400;
+            font-family: "Helvetica", "Arial", sans-serif;
+            border-radius: 4px;
+            cursor: pointer;
+            appearance: none;
+            border: solid 1px #191970;
+            color: #000000;
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-radius: 15px;
+          }
+    
+          .outer {
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -210px;
+          }
+    
+          .title {text-align: center;}
+        
+    </style>
+    </head>
+
+  <body style= "background: linear-gradient(to right, #E6E6FA, #5fc3e4);">
+  
+    <div class = "outer">
+  
+      <hr style= "height: 1px; background-color: #191970;">
+      <h1 style = "title">{{ month }}월 {{ day }}의 날씨 예보</h1>
+      <hr style= "height: 1px; background-color: #191970;">
+  
+      <h3>=== 기온 ===</h3>
+        <p>새벽 평균 기온은 {{ dawn }}℃로 예상됩니다.</p>
+        <p>오전 평균 기온은 {{ morning }}℃로 예상됩니다.</p>
+        <p>오후 평균 기온은 {{ afternoon }}℃로 예상됩니다.</p>
+        <p>저녁 평균 기온은 {{ evening }}℃로 예상됩니다.</p>
+      
+        {% if pred_rn|length != 0 %}
+        <h3>===강수===</h3>
+        <p> {{rn_mor}} </p>
+        <p> {{rn_aft}} </p>
+        <p> {{rn_eve}} </p>
+        <p> {{rn_dawn}} </p>
+      {% endif %}
+        
+      {% if pred_sn|length != 0 %}
+        <h3>===적설===</h3>
+        <p> {{sn_mor}} </p>
+        <p> {{sn_aft}} </p>
+        <p> {{sn_eve}} </p>
+        <p> {{sn_dawn}} </p>
+      {% endif %}
+      
+      <br>
+
+      {% if month == 12 and day == 25 %}
+        <h1> Happy White Christmas! </h1>
+      {% endif %}
+      
+      <br>
+      <br>
+      <br>
+
+      <div style="button1">
+        <button class="button1"
+        type="button" onClick="location.href='../weather'"> 되돌아가기
+        </button>
+
+        <br>
+        <br>
+
+        <button class="button1"
+        type="button" onClick="location.href='../../'"> 처음으로
+        </button>
+
+      </div>
+    </div>
+  </body>
+</html>
